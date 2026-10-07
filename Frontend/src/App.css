@@ -1,0 +1,254 @@
+/* ========================================================
+   Cyber-Violet & Midnight Glassmorphism Theme for App
+   ======================================================== */
+
+:root {
+  --bg-app: #090d16;
+  --bg-surface: #111726;
+  --bg-card: rgba(17, 24, 39, 0.75);
+  --bg-card-hover: rgba(24, 33, 54, 0.9);
+  --border-glass: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(139, 92, 246, 0.4);
+
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+
+  --accent-primary: #8b5cf6;
+  --accent-secondary: #06b6d4;
+  --accent-gradient: linear-gradient(135deg, #8b5cf6 0%, #6366f1 50%, #3b82f6 100%);
+  --accent-gradient-warm: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+
+  --glow-violet: 0 8px 30px rgba(139, 92, 246, 0.3);
+  --glow-cyan: 0 8px 30px rgba(6, 182, 212, 0.25);
+  --card-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+}
+
+/* Global Body Theme */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-app) !important;
+  background-image: 
+    radial-gradient(circle at 15% 10%, rgba(139, 92, 246, 0.18) 0%, transparent 40%),
+    radial-gradient(circle at 85% 80%, rgba(6, 182, 212, 0.14) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 60%) !important;
+  background-attachment: fixed;
+  color: var(--text-primary) !important;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* App Main Wrapper */
+.app-wrapper {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 30px 20px 60px;
+}
+
+/* Top Dashboard / Counter Section */
+.counter-panel {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 45px;
+}
+
+.counter-card {
+  flex: 1 1 280px;
+  max-width: 400px;
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-glass);
+  border-radius: 18px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.counter-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent-gradient);
+  opacity: 0.8;
+}
+
+.counter-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-hover);
+  box-shadow: var(--glow-violet);
+}
+
+.counter-card .counter-title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 8px;
+}
+
+.counter-card .counter-value {
+  font-size: 3rem;
+  font-weight: 800;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+  margin: 4px 0 18px;
+}
+
+/* Counter Interactive Buttons */
+.counter-btn {
+  width: 100%;
+  padding: 12px 24px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.counter-btn.primary {
+  background: var(--accent-gradient);
+}
+
+.counter-btn.primary:hover {
+  filter: brightness(1.15);
+  box-shadow: var(--glow-violet);
+  transform: translateY(-2px);
+}
+
+.counter-btn.secondary {
+  background: var(--accent-gradient-warm);
+}
+
+.counter-btn.secondary:hover {
+  filter: brightness(1.15);
+  box-shadow: 0 8px 25px rgba(236, 72, 153, 0.35);
+  transform: translateY(-2px);
+}
+
+.counter-btn:active {
+  transform: scale(0.97);
+}
+
+/* ========================================================
+   ProductList Dark Theme Elevation
+   ======================================================== */
+
+.page-title {
+  color: var(--text-primary) !important;
+  font-size: 2.2rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.5px;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 40px !important;
+}
+
+.page-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--accent-gradient);
+  border-radius: 2px;
+  margin: 8px auto 0;
+}
+
+/* Product Card Overrides */
+.product-card {
+  background: var(--bg-card) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border-glass) !important;
+  border-radius: 20px !important;
+  box-shadow: var(--card-shadow) !important;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.product-card:hover {
+  transform: translateY(-8px) scale(1.01) !important;
+  border-color: var(--border-hover) !important;
+  box-shadow: 0 16px 35px -5px rgba(0, 0, 0, 0.6), var(--glow-violet) !important;
+}
+
+/* Product Image Box */
+.product-image {
+  background: rgba(11, 15, 25, 0.6) !important;
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.product-image img {
+  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.3));
+}
+
+/* Product Content */
+.product-category {
+  background: rgba(139, 92, 246, 0.18) !important;
+  color: #c4b5fd !important;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  letter-spacing: 0.5px;
+}
+
+.product-content h2 {
+  color: var(--text-primary) !important;
+  font-weight: 700;
+}
+
+.description {
+  color: var(--text-secondary) !important;
+}
+
+/* Product Price & Rating */
+.price {
+  color: #38bdf8 !important;
+  font-weight: 800 !important;
+  font-size: 1.5rem !important;
+}
+
+.rating {
+  background: rgba(251, 191, 36, 0.15) !important;
+  color: #fbbf24 !important;
+  border: 1px solid rgba(251, 191, 36, 0.25);
+}
+
+.stock {
+  color: var(--text-secondary) !important;
+}
+
+/* Buy Button */
+.buy-btn {
+  background: var(--accent-gradient) !important;
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3) !important;
+  transition: all 0.25s ease !important;
+}
+
+.buy-btn:hover {
+  background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%) !important;
+  box-shadow: var(--glow-violet) !important;
+  transform: translateY(-2px);
+}
+
+.buy-btn:active {
+  transform: scale(0.98);
+}
